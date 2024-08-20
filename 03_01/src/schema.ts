@@ -10,11 +10,11 @@ type Car {
 }
 
 type Query {
-  
+  getCars: [Car!]!
 }
 
 type Mutation {
- 
+ addCars(carType: String!, color: String!, year: Int!) : Car!
 }
 `;
 

@@ -9,9 +9,21 @@ let cars: {id: number; carType: string; color: string; year: number}[] = [
 const resolvers = {
 
   Query: {
+    getCars: () => cars,
   },
  
   Mutation: {
+    addCar: (_: any, args: any) => {
+      const newCar = {
+        id: cars.length+1,
+        carType: args.carType,
+        color: args.color,
+        year: args.year,
+      }
+
+      cars.push(newCar)
+      return newCar
+    }
   }
 
   
